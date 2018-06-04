@@ -4,11 +4,13 @@ import com.insightfullogic.java8.exercises.Exercises;
 
 import javax.swing.text.DateFormatter;
 
+import java.text.SimpleDateFormat;
+
 import static java.lang.ThreadLocal.withInitial;
 
 public class Question2 {
 
     public static ThreadLocal<DateFormatter> formatter
-            = Exercises.replaceThisWithSolution();
+            = ThreadLocal.withInitial(() -> new DateFormatter(new SimpleDateFormat("dd-MMM-yyyy")));
 
 }
