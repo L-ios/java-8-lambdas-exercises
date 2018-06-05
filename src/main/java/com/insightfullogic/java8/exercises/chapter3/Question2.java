@@ -8,6 +8,7 @@ import java.util.List;
 public class Question2 {
     // Q3
     public static int countBandMembersInternal(List<Artist> artists) {
-        return Exercises.replaceThisWithSolution();
+        return artists.stream().map(artist -> artist.getMembers().count())
+                .reduce(0l, Long::sum).intValue();
     }
 }
